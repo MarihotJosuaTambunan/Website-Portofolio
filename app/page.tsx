@@ -23,6 +23,9 @@ import {
   Github,
   Eye,
   ZoomIn,
+  ShieldCheck,
+  Cloud,
+  Cpu,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -41,8 +44,7 @@ export default function Portfolio() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
 
   const texts = [
-    "Aspiring Data Specialist & Machine Learning Enthusiast",
-    "Software Engineering Technology Student with hands-on experience in data analysis, data engineering, and ML projects, passionate about building clean, reliable, and insightful datasets.",
+    "Ex-SWE Intern @ Wide Tech | Ex-PenTester Intern @ Sembrani Siber | Ex-ML Engineer @ DBS Foundation",
   ]  
 
   useEffect(() => {
@@ -75,17 +77,50 @@ export default function Portfolio() {
   }, [darkMode])
 
   const skills = {
-    "Data & Database": ["Tableau", "Power BI (Microsoft)", "Excel", "MySQL", "PostgreSQL", "MongoDB", "Hadoop", "Cassandra"],
-    Programming: ["Python", "Java", "C", "PHP", "JavaScript", "Go"],
-    Backend: ["PHP (Laravel)", "RESTful API", "Microservices"],
+    "Data & Database": ["PostgreSQL", "MySQL", "Tableau", "Power BI", "Excel", "SQL", "MongoDB", "Hadoop", "Cassandra"],
+    "Machine Learning & AI": ["Scikit-Learn", "OpenCV", "YOLO (v8/v10/v11)", "NumPy", "Pandas", "Matplotlib", "Data Pipelines"],
+    "Cybersecurity & Audit": ["Burp Suite", "OWASP ZAP", "Penetration Testing", "Vulnerability Assessment", "ISO/IEC 27001"],
+    Programming: ["Python", "Java", "PHP", "Go", "JavaScript", "C"],
+    Backend: ["PHP (Laravel)", "Java (Spring MVC, Hibernate)", "RESTful API", "Microservices"],
     Frontend: ["React", "HTML/CSS", "Bootstrap", "Tailwind CSS"],
-    "Tools & Design": ["Figma", "Adobe XD", "Git", "Agile/Scrum"],
-  }
+  } 
 
-  const projects = [
+  const workExperiences = [
+    {
+      title: "Penetration Tester Intern",
+      company: "PT Sembrani Siber Solusindo • Remote",
+      period: "May 2026 - Aug 2026",
+      description: "An ICT solutions and cybersecurity firm specializing in enterprise technology and consulting",
+      highlights: [
+        "Conducted security assessments on client web apps and network infrastructure",
+        "Identified attack vectors and access risks using standard pentesting methods",
+        "Authored security reports and mitigation strategies for client cyber defense",
+      ],
+      tags: ["Cybersecurity", "Penetration Testing", "Vulnerability Assessment", "Network Security", "Python"],
+      github: null,
+      certificatePdf: "/Sertifikat Internship-Marihot Josua Tambunan.pdf",
+      showGitHub: false,
+      id: "Penetration-Tester-Intern-Sembrani",
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "PT Wide Technologies Indonesia • Jakarta, Indonesia",
+      period: "Jul 2025 - Dec 2025",
+      description: "A financial technology (fintech) solutions and IT infrastructure company",
+      highlights: [
+        "Analyzed Java enterprise banking CMS architecture to evaluate system workflows",
+        "Audited APIs via black-box t esting with OWASP ZAP, Burp Suite, and Postman",
+        "Built a Laravel 10 application demonstrating secure coding remediations",
+      ],
+      tags: ["Java", "Spring MVC", "Laravel", "Security Audit", "OWASP ZAP", "API Testing"],
+      github: null,
+      certificatePdf: "Internship Certificate_Software Engineer.pdf",
+      showGitHub: false,
+      id: "Software-Engineer-Intern-WideTech",
+    },
     {
       title: "Machine Learning Engineer Intern",
-      company: "DBS Foundation Coding Camp",
+      company: "DBS Foundation Coding Camp • Remote",
       period: "Jan 2025 - Present",
       description: "Intensive bootcamp focused on data science and machine learning technologies",
       highlights: [
@@ -93,13 +128,32 @@ export default function Portfolio() {
         "Developed ML capabilities from basics to practical implementation",
         "Applied end-to-end data workflow and model deployment",
       ],
-      tags: ["Python", "Machine Learning", "Data Science","Data Analytics","SQL"],
+      tags: ["Python", "Machine Learning", "Data Science", "Data Analytics", "SQL"],
       github: "https://github.com/marihottambunan/Coding-Cap-by-DBS-Foundation.git",
+      certificatePdf: "Marihot Josua Tambunan-Machine Learning .pdf",
+      showGitHub: true,
       id: "ml-bootcamp",
+    },
+  ]
+
+  const projects = [
+    {
+      title: "Comparative Analysis of Child Activity Classification",
+      company: "Institut Teknologi Del • Toba, Indonesia",
+      period: "Jan 2026 - Jul 2026",
+      description: "Undergraduate Thesis Research",
+      highlights: [
+        "Engineered a data pipeline to clean and augment 4,800+ images",
+        "Benchmarked CNN, Hybrid CNN-SVM, and ResNet-18 architectures",
+        "Optimized Hybrid CNN-SVM via Grid Search, reaching 87.41% accuracy",
+      ],
+      tags: ["Python", "Data Analytics", "Data Augmentation", "Model Evaluation", "Computer Vision"],
+      github: "https://drive.google.com/drive/folders/1s7wG52arUtAmKfW30IxhkRI3go3auJop?usp=drive_link",
+      id: "Undergraduate-Thesis-Research",
     },
     {
       title: "Agricultural Data Collection System",
-      company: "North Tapanuli Region",
+      company: "Institut Teknologi Del • Toba, Indonesia",
       period: "Jan 2025 - Jun 2025",
       description: "Web-based system for agricultural potential data collection",
       highlights: [
@@ -107,27 +161,27 @@ export default function Portfolio() {
         "Built automated data processing system for real-time statistics",
         "Developed data integration solutions for regional planning",
       ],
-      tags: ["PostgreSQL", "PHP", "Data Processing", "Dashboard"],
+      tags: ["PostgreSQL", "PHP", "SQA", "Data Modeling", "Laravel"],
       github: "https://github.com/gilberd-siboro/PA_3-Data_Pertanian.git",
       id: "agricultural-system",
     },
     {
       title: "MediVize Drug Information System",
-      company: "Web-Based Image Classification",
+      company: "Institut Teknologi Del • Toba, Indonesia",
       period: "Apr 2025 - Jun 2025",
       description: "Web-based application for identifying drugs via image classification",
       highlights: [
         "Implemented YOLOv11 model for drug packaging image classification",
         "Applied data cleaning, preprocessing, and augmentation using NumPy",
-        "Evaluated model performance using accuracy and detection metrics"
+        "Evaluated model performance using accuracy and detection metrics",
       ],
-      tags: ["YOLOv11", "NumPy", "Machine Learning", "Computer Vision"],
+      tags: ["YOLOv11", "Python", "NumPy", "Computer Vision", "Data Augmentation", "Object Detection"],
       github: "https://github.com/kyntar/medivize.git",
-      id: "medivize"
-    },    
+      id: "medivize",
+    },
     {
       title: "Learning Style Prediction Model",
-      company: "IT Del Research Project",
+      company: "Institut Teknologi Del • Toba, Indonesia",
       period: "Oct 2024 - Dec 2024",
       description: "ML model to predict student learning styles using Felder-Silverman Model",
       highlights: [
@@ -135,13 +189,13 @@ export default function Portfolio() {
         "Achieved 97% accuracy with K-Means, SVM, Random Forest",
         "Applied hyperparameter tuning using GridSearchCV",
       ],
-      tags: ["Machine Learning", "Python", "Data Preprocessing", "Classification"],
+      tags: ["Python", "Scikit-Learn", "Machine Learning", "Data Preprocessing", "SMOTE"],
       github: "https://github.com/FransElo21/Proyek_PM_Kel11.git",
       id: "learning-style",
     },
     {
       title: "Balige Traditional Market Platform",
-      company: "Web-based Marketplace",
+      company: "Institut Teknologi Del • Toba, Indonesia",
       period: "Jan 2024 - Jun 2024",
       description: "Multi-vendor marketplace platform for traditional market",
       highlights: [
@@ -149,13 +203,13 @@ export default function Portfolio() {
         "Built automated workflows for inventory and order tracking",
         "Developed vendor onboarding and reporting systems",
       ],
-      tags: ["MySQL", "PHP", "Laravel", "E-commerce"],
+      tags: ["MySQL", "PHP", "Laravel", "Database Design", "Web Development"],
       github: "https://github.com/VeriMarpaung/Balige-Traditional-Marketplace.git",
       id: "balige-market",
     },
     {
       title: "Microservices E-Commerce",
-      company: "Traditional Market Platform",
+      company: "Institut Teknologi Del • Toba, Indonesia",
       period: "Apr 2024 - May 2024",
       description: "Scalable e-commerce platform using microservices architecture",
       highlights: [
@@ -163,25 +217,24 @@ export default function Portfolio() {
         "Built distributed data processing system",
         "Developed API-based communication between services",
       ],
-      tags: ["Go", "Laravel", "Microservices", "API"],
+      tags: ["Go", "Laravel", "Microservices", "RESTful API", "Distributed Systems"],
       github: "https://github.com/marihottambunan/PA2_PASTI.git",
       id: "microservices-ecommerce",
     },
     {
       title: "Rumata Coffee Digital Marketing Website",
-      company: "Web-based Information System",
+      company: "Institut Teknologi Del • Toba, Indonesia",
       period: "Jan 2023 - Jun 2023",
       description: "Digital marketing website for promoting Rumata Coffee products and services",
       highlights: [
         "Designed database with multi-level user access using Native PHP and MySQL",
         "Built automated CMS for product and feedback management",
-        "Integrated external APIs (Google Maps, WhatsApp) for seamless connectivity"
+        "Integrated external APIs (Google Maps, WhatsApp) for seamless connectivity",
       ],
-      tags: ["PHP", "MySQL", "CMS", "API Integration"],
+      tags: ["PHP", "MySQL", "RESTful API", "Web Development", "Database Management"],
       github: "https://github.com/HandikaRonny/Rumata-Coffee-Website-using-PHP-Native.git",
-      id: "rumata-coffee"
-    }
-    
+      id: "rumata-coffee",
+    },
   ]
 
   const organizations = [
@@ -213,49 +266,82 @@ export default function Portfolio() {
 
   const certifications = [
     {
+      title: "Penetration Tester Intern Certificate | Sembrani Siber Solusindo (2026)",
+      image: "./serti_13.png",
+    },
+    
+    {
+      title: " TOEFL ITP (Score : 513) | ETS (2025)",
+      image: "./serti_12.png",
+    },
+    
+    {
+      title: "Software Engineer Intern Certificate | Wide Technologies Indonesia (2025)",
+      image: "./serti_14.jpg",
+    },
+    {
+      title: "Google UX Design Professional Certificate | Coursera (2024)",
+      image: "./serti_8.png",
+    },
+    {
       title: "Machine Learning Terapan | Dicoding (2025)",
       image: "./serti_1.png",
-    },
-    {
-      title: "Belajar Dasar Visualisasi Data | Dicoding (2025)",
-      image: "./serti_2.png",
-    },
-    {
-      title: "Belajar Analisis Data dengan Python | Dicoding (2025)",
-      image: "./serti_3.png",
-    },
-    {
-      title: "Belajar Fundamental Deep Learning | Dicoding (2025)",
-      image: "./serti_4.png",
     },
     {
       title: "Data Science Project: Predictive Analytics | Eduwork.id (2024)",
       image: "./serti_5.png",
     },
     {
+      title: "Belajar Dasar Visualisasi Data | Dicoding (2025)",
+      image: "./serti_2.png",
+    },
+    {
       title: "Python Fundamental for Data Science | DQlab (2024)",
       image: "./serti_6.png",
+    },
+    {
+      title: "Belajar Analisis Data dengan Python | Dicoding (2025)",
+      image: "./serti_3.png",
     },
     {
       title: "Data Engineering Project: Taxi Travel Data Analysis | Dibimbing.id (2024)",
       image: "./serti_7.png",
     },
     {
-      title: "Google UX Design Professional Certificate",
-      image: "./serti_8.png",
+      title: "Belajar Fundamental Deep Learning | Dicoding (2025)",
+      image: "./serti_4.png",
     },
     {
-      title: "Fintech Apps: UI/UX Class Program | Eduwork.id (PT Talenta Sinergi Group)",
-      image: "./serti_9.png",
-    },
-    {
-      title: "Software Engineering Fundamentals Course | RevoU",
+      title: "Software Engineering Fundamentals Course | RevoU (2024)",
       image: "./serti_10.png",
     },
     {
-      title: "Web Development Series 3.0 | Dibimbing.id",
+      title: "Belajar Fundamental Pemrosesan Data | Dicoding (2025)",
+      image: "./serti_18.jpg",
+    },
+    {
+      title: "Fintech Apps: UI/UX Class Program | Eduwork.id (PT Talenta Sinergi Group) (2024)",
+      image: "./serti_9.png",
+    },
+    {
+      title: "Memulai Pemrograman dengan Python | Dicoding (2025)",
+      image: "./serti_15.jpg",
+    },
+    
+    {
+      title: "Web Development Series 3.0 | Dibimbing.id (2024)",
       image: "./serti_11.png",
     },
+    {
+      title: "Belajar Dasar AI | Dicoding (2025)",
+      image: "./serti_17.jpg",
+    },
+    {
+      title: "Belajar Machine Learning untuk Pemula | Dicoding (2025)",
+      image: "./serti_16.jpg",
+    },
+    
+    
   ]
 
   const scrollToSection = (sectionId: string) => {
@@ -393,7 +479,7 @@ export default function Portfolio() {
                   className="absolute inset-2 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl"
                 >
                   <img
-                    src="./Profile.jpg"
+                    src="./Profile.jpeg"
                     alt="Marihot Josua Tambunan"
                     className="w-full h-full object-cover"
                   />
@@ -441,17 +527,10 @@ export default function Portfolio() {
               transition={{ delay: 0.6 }}
               className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300"
             >
-              Aspiring Data Specialist & Machine Learning Enthusiast
+              Ex-SWE Intern @ Wide Tech | Ex-PenTester Intern @ Sembrani Siber | Ex-ML Engineer @ DBS Foundation
             </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto"
-            >
-              Software Engineering Technology Student with hands-on experience in data analysis, data engineering, and ML projects, passionate about building clean, reliable, and insightful datasets.
-            </motion.p>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -514,19 +593,15 @@ export default function Portfolio() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I am a sixth-semester Software Engineering Technology student at Institut Teknologi Del with strong
-                interests in Data Analysis, Data Science, and Data Engineering. I have completed multiple data projects
-                using SQL, Python, and data visualization tools.
+                I am a Software Engineering graduate from Del Institute of Technology with a strong passion for Software Engineering, Data & Machine Learning, and Security Testing. Through internships at PT Wide Technologies as a Software Engineer and PT Sembrani Siber Solusindo as a Penetration Tester, combined with completing the Machine Learning track at DBS Foundation Coding Camp, I have gained hands-on experience across Java, Laravel, SQL, Python data workflows, and vulnerability assessments.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                With a solid academic background and practical experience, I am motivated to contribute as a Data
-                Specialist in a dynamic environment. Currently maintaining a GPA of 3.29/4.00 and expected to graduate
-                in September 2026.
+                Beyond technical impl ementation, my active participation in student leadership and team-driven academic projects has shaped my analytical thinking, adaptability, and collaboration skills. I am actively seeking entry-level opportunities where I can apply my skills across software development, data solutions, or security testing
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">3.29</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">3.35</div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">GPA</div>
                 </div>
                 <div className="text-center p-4 bg-white dark:bg-gray-700 rounded-lg shadow-sm">
@@ -603,10 +678,11 @@ export default function Portfolio() {
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-2 text-gray-900 dark:text-white">
                       {category === "Data & Database" && <Database className="w-5 h-5 text-blue-600" />}
+                      {category === "Machine Learning & AI" && <Cpu className="w-5 h-5 text-cyan-600" />}
+                      {category === "Cybersecurity & Audit" && <ShieldCheck className="w-5 h-5 text-red-600" />}
                       {category === "Programming" && <Code className="w-5 h-5 text-green-600" />}
                       {category === "Backend" && <Brain className="w-5 h-5 text-purple-600" />}
                       {category === "Frontend" && <ExternalLink className="w-5 h-5 text-orange-600" />}
-                      {category === "Tools & Design" && <Award className="w-5 h-5 text-red-600" />}
                       <span>{category}</span>
                     </CardTitle>
                   </CardHeader>
@@ -621,6 +697,97 @@ export default function Portfolio() {
                           {skill}
                         </Badge>
                       ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Work Experience Section */}
+      <section
+        id="experience"
+        className="py-20 bg-gradient-to-br from-white to-slate-50 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Work Experience</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto"></div>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {workExperiences.map((experience, index) => (
+              <motion.div
+                key={experience.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full bg-white dark:bg-gray-700 border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <CardTitle className="text-xl text-gray-900 dark:text-white mb-2">{experience.title}</CardTitle>
+                        <CardDescription className="text-blue-600 dark:text-blue-400 font-medium">
+                          {experience.company}
+                        </CardDescription>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                        <Calendar className="w-4 h-4 mr-1" />
+                        {experience.period}
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-gray-600 dark:text-gray-300">{experience.description}</p>
+                    <ul className="space-y-2">
+                      {experience.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start space-x-2 text-sm text-gray-600 dark:text-gray-300">
+                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-2 pt-4">
+                      {experience.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="outline"
+                          className="border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="flex space-x-3 pt-4">
+                      {experience.github && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => window.open(experience.github, "_blank")}
+                          className="flex items-center space-x-2"
+                        >
+                          <Github className="w-4 h-4" />
+                          <span>GitHub</span>
+                        </Button>
+                      )}
+                      <Button
+                        size="sm"
+                        onClick={() => setSelectedProject(experience)}
+                        className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700"
+                      >
+                        <Eye className="w-4 h-4" />
+                        <span>See Details</span>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -693,15 +860,27 @@ export default function Portfolio() {
                       ))}
                     </div>
                     <div className="flex space-x-3 pt-4">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => window.open(project.github, "_blank")}
-                        className="flex items-center space-x-2"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>GitHub</span>
-                      </Button>
+                      {project.title === "Comparative Analysis of Child Activity Classification" ? (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => window.open(project.github, "_blank")}
+                          className="flex items-center space-x-2"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          <span>Drive</span>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => window.open(project.github, "_blank")}
+                          className="flex items-center space-x-2"
+                        >
+                          <Github className="w-4 h-4" />
+                          <span>GitHub</span>
+                        </Button>
+                      )}
                       <Button
                         size="sm"
                         onClick={() => setSelectedProject(project)}
@@ -719,9 +898,9 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Leadership & Organizations Section */}
       <section
-        id="experience"
+        id="leadership"
         className="py-20 bg-gradient-to-br from-white to-slate-50 dark:bg-gradient-to-br dark:from-gray-900 dark:to-slate-900"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -974,7 +1153,7 @@ export default function Portfolio() {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Key Achievements</h4>
                   <ul className="space-y-3">
-                    {selectedProject.highlights.map((highlight: string, idx: number) => (
+                    {selectedProject.highlights?.map((highlight: string, idx: number) => (
                       <li key={idx} className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-gray-600 dark:text-gray-300">{highlight}</span>
@@ -986,7 +1165,7 @@ export default function Portfolio() {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Technologies Used</h4>
                   <div className="flex flex-wrap gap-2">
-                    {selectedProject.tags.map((tag: string) => (
+                    {selectedProject.tags?.map((tag: string) => (
                       <Badge
                         key={tag}
                         variant="outline"
@@ -998,14 +1177,29 @@ export default function Portfolio() {
                   </div>
                 </div>
 
+                {selectedProject.certificatePdf && (
+                  <div className="pt-2">
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Certificate</h4>
+                    <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+                      <iframe
+                        src={selectedProject.certificatePdf}
+                        title={selectedProject.title}
+                        className="w-full h-[70vh]"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 <div className="flex space-x-4 pt-6 border-t border-gray-200 dark:border-gray-700">
-                  <Button
-                    onClick={() => window.open(selectedProject.github, "_blank")}
-                    className="flex items-center space-x-2 bg-gray-900 hover:bg-gray-800 text-white"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>View on GitHub</span>
-                  </Button>
+                  {selectedProject.github && selectedProject.github !== "" && (
+                    <Button
+                      onClick={() => window.open(selectedProject.github, "_blank")}
+                      className="flex items-center space-x-2 bg-gray-900 hover:bg-gray-800 text-white"
+                    >
+                      <Github className="w-4 h-4" />
+                      <span>View on GitHub</span>
+                    </Button>
+                  )}
                   <Button variant="outline" onClick={() => setSelectedProject(null)}>
                     Close
                   </Button>
